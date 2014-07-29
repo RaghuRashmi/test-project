@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Test_Suite_for_NBCIdx">
+              <span class="suite-name border-passed">Test Suite for NBCIdx</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Test_Suite_for_NBCIdx">
+                    <span>C:\Users\206424426\workspace\test-nbcidx-idx\src\test\resources\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Test_Suite_for_NBCIdx">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Test_Suite_for_NBCIdx">
+                    <span>3 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Test_Suite_for_NBCIdx">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Test_Suite_for_NBCIdx">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Test_Suite_for_NBCIdx">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Test_Suite_for_NBCIdx">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">11 methods,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Test_Suite_for_NBCIdx" class="hide-methods passed suite-Test_Suite_for_NBCIdx"> (hide)</a> <!-- hide-methods passed suite-Test_Suite_for_NBCIdx -->
+                      <a href="#" panel-name="suite-Test_Suite_for_NBCIdx" class="show-methods passed suite-Test_Suite_for_NBCIdx"> (show)</a> <!-- show-methods passed suite-Test_Suite_for_NBCIdx -->
+                    </span>
+                    <div class="method-list-content passed suite-Test_Suite_for_NBCIdx">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo" hash-for-method="createRandomMember">createRandomMember</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification" hash-for-method="memberGet_verifyAPI">memberGet_verifyAPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification" hash-for-method="memberGet_verifyDB">memberGet_verifyDB</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification" hash-for-method="memberLogin_verifyAPI">memberLogin_verifyAPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification" hash-for-method="memberLogin_verifyDB">memberLogin_verifyDB</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification" hash-for-method="memberLogout_verifyAPI">memberLogout_verifyAPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification" hash-for-method="memberLogout_verifyDB">memberLogout_verifyDB</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification" hash-for-method="memberPut_verifyAPI">memberPut_verifyAPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification" hash-for-method="memberPut_verifyDB">memberPut_verifyDB</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification" hash-for-method="memberRemove_verifyAPI">memberRemove_verifyAPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_Suite_for_NBCIdx" title="com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification" hash-for-method="memberRemove_verifyDB">memberRemove_verifyDB</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Test_Suite_for_NBCIdx -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Test_Suite_for_NBCIdx" class="panel Test_Suite_for_NBCIdx">
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createRandomMember">
+                  </a> <!-- createRandomMember -->
+                  <span class="method-name">createRandomMember</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberPut_verifyDB">
+                  </a> <!-- memberPut_verifyDB -->
+                  <span class="method-name">memberPut_verifyDB</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberGet_verifyDB">
+                  </a> <!-- memberGet_verifyDB -->
+                  <span class="method-name">memberGet_verifyDB</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberLogin_verifyDB">
+                  </a> <!-- memberLogin_verifyDB -->
+                  <span class="method-name">memberLogin_verifyDB</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberGet_verifyAPI">
+                  </a> <!-- memberGet_verifyAPI -->
+                  <span class="method-name">memberGet_verifyAPI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberPut_verifyAPI">
+                  </a> <!-- memberPut_verifyAPI -->
+                  <span class="method-name">memberPut_verifyAPI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberRemove_verifyDB">
+                  </a> <!-- memberRemove_verifyDB -->
+                  <span class="method-name">memberRemove_verifyDB</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberLogout_verifyDB">
+                  </a> <!-- memberLogout_verifyDB -->
+                  <span class="method-name">memberLogout_verifyDB</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberRemove_verifyAPI">
+                  </a> <!-- memberRemove_verifyAPI -->
+                  <span class="method-name">memberRemove_verifyAPI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberLogin_verifyAPI">
+                  </a> <!-- memberLogin_verifyAPI -->
+                  <span class="method-name">memberLogin_verifyAPI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+          <div class="suite-Test_Suite_for_NBCIdx-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="memberLogout_verifyAPI">
+                  </a> <!-- memberLogout_verifyAPI -->
+                  <span class="method-name">memberLogout_verifyAPI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite_for_NBCIdx-class-passed -->
+        </div> <!-- panel Test_Suite_for_NBCIdx -->
+        <div panel-name="test-xml-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\206424426\workspace\test-nbcidx-idx\src\test\resources\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; name=&quot;Test Suite for NBCIdx&quot; parallel=&quot;methods&quot;&gt;
+  &lt;parameter name=&quot;Environment&quot; value=&quot;QA&quot;/&gt;
+  &lt;test name=&quot;Tests&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;sanity&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;packages&gt;
+      &lt;package name=&quot;com.nbcuni.test.nbcidx.sanity.*&quot;/&gt;
+    &lt;/packages&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification&quot;/&gt;
+      &lt;class name=&quot;com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Tests --&gt;
+&lt;/suite&gt; &lt;!-- Test Suite for NBCIdx --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Test Suite for NBCIdx</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Tests (11 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Test Suite for NBCIdx</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">API</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">createRandomMember</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberGet_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogin_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogout_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberPut_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberRemove_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">DB</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberGet_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogin_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogout_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberPut_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberRemove_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">sanity</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">createRandomMember</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberGet_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberGet_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogin_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogin_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogout_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberLogout_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberPut_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberPut_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberRemove_verifyAPI</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">memberRemove_verifyDB</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Test Suite for NBCIdx</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Test_Suite_for_NBCIdx');
+function tableData_Test_Suite_for_NBCIdx() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(11);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'memberPut_verifyAPI')
+data.setCell(0, 2, 'com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification')
+data.setCell(0, 3, 6294);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'memberLogin_verifyAPI')
+data.setCell(1, 2, 'com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification')
+data.setCell(1, 3, 4150);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'memberGet_verifyAPI')
+data.setCell(2, 2, 'com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification')
+data.setCell(2, 3, 3239);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'memberLogout_verifyAPI')
+data.setCell(3, 2, 'com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification')
+data.setCell(3, 3, 2720);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'memberRemove_verifyAPI')
+data.setCell(4, 2, 'com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification')
+data.setCell(4, 3, 2094);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'memberPut_verifyDB')
+data.setCell(5, 2, 'com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification')
+data.setCell(5, 3, 107);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'memberGet_verifyDB')
+data.setCell(6, 2, 'com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification')
+data.setCell(6, 3, 105);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'memberLogin_verifyDB')
+data.setCell(7, 2, 'com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification')
+data.setCell(7, 3, 104);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'memberRemove_verifyDB')
+data.setCell(8, 2, 'com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification')
+data.setCell(8, 3, 92);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'memberLogout_verifyDB')
+data.setCell(9, 2, 'com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification')
+data.setCell(9, 3, 92);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'createRandomMember')
+data.setCell(10, 2, 'com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo')
+data.setCell(10, 3, 56);
+window.suiteTableData['Test_Suite_for_NBCIdx']= { tableData: data, tableDiv: 'times-div-Test_Suite_for_NBCIdx'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <div id="times-div-Test_Suite_for_NBCIdx">
+              </div> <!-- times-div-Test_Suite_for_NBCIdx -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Test Suite for NBCIdx</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberLogin_verifyDB</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Validating logged_in status for Member test_20140729_122522 in MongoDB</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</span>
+                <span class="reporter-method-output">Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "_logged_in" : [ { "value" : true}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : _logged_in status for Member test_20140729_122522 is true in MongoDB Database</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberLogin_verifyAPI</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">/************************************************************************ MEMBER.LOGIN ************************************************************************/</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">JSON Body for member.login : id=test_20140729_122522&password=20140729_122522</span>
+                <span class="reporter-method-output">API - postRestRequest :: Data will be submitted as <POST>
+
+: id=test_20140729_122522&password=20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/login?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:36.205000","username":"test_20140729_122522","_logged_in":true,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Call Response : {"_updated":"2014-07-29T16:25:36.205000","username":"test_20140729_122522","_logged_in":true,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">login_status fetched from API Response =true</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : _logged_in status in API Response for Member test_20140729_122522 is true</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberPut_verifyDB</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Validating Member present in MongoDB</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</span>
+                <span class="reporter-method-output">Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : Member = test_20140729_122522 present in Mongo Database with Email-Id = test20140729_122522@gmail.com and UUID = 9132fcc47d5748e4949c5730a8b7cc60</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberRemove_verifyDB</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Validating Member present in MongoDB</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</span>
+                <span class="reporter-method-output">MongoDB Cursor is empty. No Data found from Database</span>
+                <span class="reporter-method-output">No Data found for Member test_20140729_122522 from Database</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : Member test_20140729_122522 successfully deleted from MongoDB</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">createRandomMember</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">/************************ Creating Random Member for Sanity Test ********************************/</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Random Member Created with below information =></span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Member Name : test_20140729_122522</span>
+                <span class="reporter-method-output">Password : 20140729_122522</span>
+                <span class="reporter-method-output">Email-Id : test20140729_122522@gmail.com</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberGet_verifyAPI</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">/************************************************************************ MEMBER.GET ************************************************************************/</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API - getHTTPResponseCode :: HTTP Response Code from URL(https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522): 200</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : Response code from member.get : 200</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Validating member.get API Response</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Call Response : {"_updated":"2014-07-29T16:25:26.932000","username":"test_20140729_122522","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : member.get API Response contains Member = test_20140729_122522 with Email-Id = test20140729_122522@gmail.com</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberLogout_verifyAPI</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">/************************************************************************ MEMBER.LOGOUT ************************************************************************/</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">JSON Body for member.logout : id=test_20140729_122522</span>
+                <span class="reporter-method-output">API - postRestRequest :: Data will be submitted as <POST>
+
+: id=test_20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/logout?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:40.383000","username":"test_20140729_122522","_logged_in":false,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Call Response : {"_updated":"2014-07-29T16:25:40.383000","username":"test_20140729_122522","_logged_in":false,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">login_status fetched from API Response =false</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : _logged_in status in API Response for Member test_20140729_122522 is false</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberPut_verifyAPI</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">/************************************************************************ MEMBER.PUT ************************************************************************/</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.PUT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+                <span class="reporter-method-output">Validating API call Response</span>
+                <span class="reporter-method-output"></span>
+                <span class="reporter-method-output">API - postRestRequest :: Data will be submitted as <POST>
+
+: {"username":"test_20140729_122522","password":"20140729_122522","email":"test20140729_122522@gmail.com"}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/put?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:26.932000","username":"test_20140729_122522","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</span>
+                <span class="reporter-method-output">membername fetched from API Response ="test_20140729_122522"</span>
+                <span class="reporter-method-output">email -> address fetched from API Response ="test20140729_122522@gmail.com"</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : API Response contains Member = test_20140729_122522 with Email-Id = test20140729_122522@gmail.com</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberLogout_verifyDB</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Validating logged_in status for Member test_20140729_122522 in MongoDB</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</span>
+                <span class="reporter-method-output">Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "_logged_in" : [ { "value" : false}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : _logged_in status for Member test_20140729_122522 is false in MongoDB Database</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberGet_verifyDB</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Validating member.get API response against MongoDB</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</span>
+                <span class="reporter-method-output">Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : Member = test_20140729_122522 present in Mongo Database with Email-Id = test20140729_122522@gmail.com and UUID = 9132fcc47d5748e4949c5730a8b7cc60</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">memberRemove_verifyAPI</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">/************************************************************************ MEMBER.REMOVE ************************************************************************/</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">JSON Body for member.remove : id=test_20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">API Request URL:  https://qa.idxapi.nbcuni.com/member/remove?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">HTTP RESPONSE: 204</span>
+                <span class="reporter-method-output">Validating member.remove Response Code</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Response code from member.remove : 204</span>
+                <span class="reporter-method-output"> </span>
+                <span class="reporter-method-output">Passed : member.remove has successfully deleted the Member : test_20140729_122522</span>
+                <span class="reporter-method-output"> </span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Test_Suite_for_NBCIdx" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">createRandomMember</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">57 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberPut_verifyAPI</span>
+                <span class="method-start">84 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">6381 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberPut_verifyDB</span>
+                <span class="method-start">6871 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">stopEnvironment</span>
+                <span class="method-start">6979 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">6982 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberGet_verifyAPI</span>
+                <span class="method-start">6983 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">10223 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberGet_verifyDB</span>
+                <span class="method-start">10561 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">stopEnvironment</span>
+                <span class="method-start">10667 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">10676 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberLogin_verifyAPI</span>
+                <span class="method-start">11193 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">15344 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberLogin_verifyDB</span>
+                <span class="method-start">16121 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">stopEnvironment</span>
+                <span class="method-start">16227 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">16228 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberLogout_verifyAPI</span>
+                <span class="method-start">16235 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">18956 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberLogout_verifyDB</span>
+                <span class="method-start">19310 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">stopEnvironment</span>
+                <span class="method-start">19403 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">19404 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberRemove_verifyAPI</span>
+                <span class="method-start">19405 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">startEnvironment(QA)</span>
+                <span class="method-start">21500 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">memberRemove_verifyDB</span>
+                <span class="method-start">21848 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">stopEnvironment</span>
+                <span class="method-start">21941 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

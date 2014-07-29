@@ -1,0 +1,337 @@
+<html>
+<head>
+<title>TestNG:  Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>11/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jul 29 12:25:22 EDT 2014</td>
+</tr>
+<tr><td>Total time:</td><td>21 seconds (21953 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>sanity </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo.createRandomMember()'><b>createRandomMember</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo<br/>
+<a href="#Output-4219289" onClick='toggleBox("Output-4219289", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-4219289" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-4219289">
+ <br/>
+/************************ Creating Random Member for Sanity Test ********************************/<br/>
+ <br/>
+Random Member Created with below information =><br/>
+ <br/>
+Member Name : test_20140729_122522<br/>
+Password : 20140729_122522<br/>
+Email-Id : test20140729_122522@gmail.com<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC01_Create_RandomMemberInfo@15a8767</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification.memberGet_verifyAPI()'><b>memberGet_verifyAPI</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification<br/>
+<a href="#Output-21607056" onClick='toggleBox("Output-21607056", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-21607056" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-21607056">
+ <br/>
+/************************************************************************ MEMBER.GET ************************************************************************/<br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522<br/>
+ <br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522<br/>
+ <br/>
+API - getHTTPResponseCode :: HTTP Response Code from URL(https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522): 200<br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522<br/>
+ <br/>
+ <br/>
+Passed : Response code from member.get : 200<br/>
+ <br/>
+Validating member.get API Response<br/>
+ <br/>
+API Call Response : {"_updated":"2014-07-29T16:25:26.932000","username":"test_20140729_122522","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}<br/>
+ <br/>
+Passed : member.get API Response contains Member = test_20140729_122522 with Email-Id = test20140729_122522@gmail.com<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC03_TC01_MemberGet_API_Verification@edc3a2</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification.memberGet_verifyDB()'><b>memberGet_verifyDB</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification<br/>
+<a href="#Output-28171097" onClick='toggleBox("Output-28171097", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-28171097" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-28171097">
+Validating member.get API response against MongoDB<br/>
+ <br/>
+MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}<br/>
+Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}<br/>
+ <br/>
+Passed : Member = test_20140729_122522 present in Mongo Database with Email-Id = test20140729_122522@gmail.com and UUID = 9132fcc47d5748e4949c5730a8b7cc60<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC03_TC02_MemberGet_DB_Verification@cec0c5</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification.memberLogin_verifyAPI()'><b>memberLogin_verifyAPI</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification<br/>
+<a href="#Output-30216319" onClick='toggleBox("Output-30216319", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-30216319" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-30216319">
+ <br/>
+/************************************************************************ MEMBER.LOGIN ************************************************************************/<br/>
+ <br/>
+JSON Body for member.login : id=test_20140729_122522&password=20140729_122522<br/>
+API - postRestRequest :: Data will be submitted as <POST>
+
+: id=test_20140729_122522&password=20140729_122522<br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/login?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346<br/>
+ <br/>
+API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:36.205000","username":"test_20140729_122522","_logged_in":true,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}<br/>
+ <br/>
+API Call Response : {"_updated":"2014-07-29T16:25:36.205000","username":"test_20140729_122522","_logged_in":true,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}<br/>
+ <br/>
+login_status fetched from API Response =true<br/>
+ <br/>
+Passed : _logged_in status in API Response for Member test_20140729_122522 is true<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC04_TC01_MemberLogin_API_Verification@b988a6</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification.memberLogin_verifyDB()'><b>memberLogin_verifyDB</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification<br/>
+<a href="#Output-23053324" onClick='toggleBox("Output-23053324", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-23053324" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-23053324">
+Validating logged_in status for Member test_20140729_122522 in MongoDB<br/>
+ <br/>
+MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}<br/>
+Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "_logged_in" : [ { "value" : true}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}<br/>
+ <br/>
+Passed : _logged_in status for Member test_20140729_122522 is true in MongoDB Database<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC04_TC02_MemberLogin_DB_Verification@3901c6</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification.memberLogout_verifyAPI()'><b>memberLogout_verifyAPI</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification<br/>
+<a href="#Output-9936523" onClick='toggleBox("Output-9936523", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-9936523" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-9936523">
+ <br/>
+/************************************************************************ MEMBER.LOGOUT ************************************************************************/<br/>
+ <br/>
+JSON Body for member.logout : id=test_20140729_122522<br/>
+API - postRestRequest :: Data will be submitted as <POST>
+
+: id=test_20140729_122522<br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/logout?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346<br/>
+ <br/>
+API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:40.383000","username":"test_20140729_122522","_logged_in":false,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}<br/>
+ <br/>
+API Call Response : {"_updated":"2014-07-29T16:25:40.383000","username":"test_20140729_122522","_logged_in":false,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}<br/>
+ <br/>
+login_status fetched from API Response =false<br/>
+ <br/>
+Passed : _logged_in status in API Response for Member test_20140729_122522 is false<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC05_TC01_MemberLogout_API_Verification@ba6c83</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification.memberLogout_verifyDB()'><b>memberLogout_verifyDB</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification<br/>
+<a href="#Output-7052420" onClick='toggleBox("Output-7052420", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-7052420" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-7052420">
+Validating logged_in status for Member test_20140729_122522 in MongoDB<br/>
+ <br/>
+MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}<br/>
+Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "_logged_in" : [ { "value" : false}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}<br/>
+ <br/>
+Passed : _logged_in status for Member test_20140729_122522 is false in MongoDB Database<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC05_TC02_MemberLogout_DB_Verification@1d63e39</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification.memberPut_verifyAPI()'><b>memberPut_verifyAPI</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification<br/>
+<a href="#Output-24807938" onClick='toggleBox("Output-24807938", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-24807938" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-24807938">
+ <br/>
+/************************************************************************ MEMBER.PUT ************************************************************************/<br/>
+ <br/>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.PUT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br/>
+Validating API call Response<br/>
+<br/>
+API - postRestRequest :: Data will be submitted as <POST>
+
+: {"username":"test_20140729_122522","password":"20140729_122522","email":"test20140729_122522@gmail.com"}<br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/put?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346<br/>
+ <br/>
+API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:26.932000","username":"test_20140729_122522","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}<br/>
+membername fetched from API Response ="test_20140729_122522"<br/>
+email -> address fetched from API Response ="test20140729_122522@gmail.com"<br/>
+ <br/>
+Passed : API Response contains Member = test_20140729_122522 with Email-Id = test20140729_122522@gmail.com<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC02_TC01_MemberPut_API_Verification@1c6f579</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification.memberPut_verifyDB()'><b>memberPut_verifyDB</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification<br/>
+<a href="#Output-25109548" onClick='toggleBox("Output-25109548", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-25109548" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-25109548">
+Validating Member present in MongoDB<br/>
+ <br/>
+MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}<br/>
+Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}<br/>
+ <br/>
+Passed : Member = test_20140729_122522 present in Mongo Database with Email-Id = test20140729_122522@gmail.com and UUID = 9132fcc47d5748e4949c5730a8b7cc60<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC02_TC02_MemberPut_DB_Verification@1cdeff</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification.memberRemove_verifyAPI()'><b>memberRemove_verifyAPI</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification<br/>
+<a href="#Output-9065611" onClick='toggleBox("Output-9065611", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-9065611" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-9065611">
+ <br/>
+/************************************************************************ MEMBER.REMOVE ************************************************************************/<br/>
+ <br/>
+JSON Body for member.remove : id=test_20140729_122522<br/>
+ <br/>
+API Request URL:  https://qa.idxapi.nbcuni.com/member/remove?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346<br/>
+ <br/>
+HTTP RESPONSE: 204<br/>
+Validating member.remove Response Code<br/>
+ <br/>
+Response code from member.remove : 204<br/>
+ <br/>
+Passed : member.remove has successfully deleted the Member : test_20140729_122522<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC06_TC01_MemberRemove_API_Verification@8f4fb3</td></tr>
+<tr>
+<td title='com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification.memberRemove_verifyDB()'><b>memberRemove_verifyDB</b><br>Test class: com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification<br/>
+<a href="#Output-26622782" onClick='toggleBox("Output-26622782", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-26622782" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-26622782">
+Validating Member present in MongoDB<br/>
+ <br/>
+MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}<br/>
+MongoDB Cursor is empty. No Data found from Database<br/>
+No Data found for Member test_20140729_122522 from Database<br/>
+ <br/>
+Passed : Member test_20140729_122522 successfully deleted from MongoDB<br/>
+ <br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.nbcuni.test.nbcidx.sanity.SC06_TC02_MemberRemove_DB_Verification@228a02</td></tr>
+</table><p>
+</body>
+</html>

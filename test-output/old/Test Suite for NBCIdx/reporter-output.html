@@ -1,0 +1,153 @@
+<h2>Reporter output</h2><table><tr><td> </td></tr>
+<tr><td>/************************ Creating Random Member for Sanity Test ********************************/</td></tr>
+<tr><td> </td></tr>
+<tr><td>Random Member Created with below information =></td></tr>
+<tr><td> </td></tr>
+<tr><td>Member Name : test_20140729_122522</td></tr>
+<tr><td>Password : 20140729_122522</td></tr>
+<tr><td>Email-Id : test20140729_122522@gmail.com</td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Proxy is enabled, hence all API requests will go via configured Proxy</td></tr>
+<tr><td> </td></tr>
+<tr><td>/************************************************************************ MEMBER.PUT ************************************************************************/</td></tr>
+<tr><td> </td></tr>
+<tr><td>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.PUT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</td></tr>
+<tr><td>Validating API call Response</td></tr>
+<tr><td></td></tr>
+<tr><td>API - postRestRequest :: Data will be submitted as <POST>
+
+: {"username":"test_20140729_122522","password":"20140729_122522","email":"test20140729_122522@gmail.com"}</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/put?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</td></tr>
+<tr><td> </td></tr>
+<tr><td>API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:26.932000","username":"test_20140729_122522","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</td></tr>
+<tr><td>membername fetched from API Response ="test_20140729_122522"</td></tr>
+<tr><td>email -> address fetched from API Response ="test20140729_122522@gmail.com"</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : API Response contains Member = test_20140729_122522 with Email-Id = test20140729_122522@gmail.com</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Validating Member present in MongoDB</td></tr>
+<tr><td> </td></tr>
+<tr><td>MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</td></tr>
+<tr><td>Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : Member = test_20140729_122522 present in Mongo Database with Email-Id = test20140729_122522@gmail.com and UUID = 9132fcc47d5748e4949c5730a8b7cc60</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Proxy is enabled, hence all API requests will go via configured Proxy</td></tr>
+<tr><td> </td></tr>
+<tr><td>/************************************************************************ MEMBER.GET ************************************************************************/</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td>API - getHTTPResponseCode :: HTTP Response Code from URL(https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522): 200</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/get?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346&id=test_20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : Response code from member.get : 200</td></tr>
+<tr><td> </td></tr>
+<tr><td>Validating member.get API Response</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Call Response : {"_updated":"2014-07-29T16:25:26.932000","username":"test_20140729_122522","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : member.get API Response contains Member = test_20140729_122522 with Email-Id = test20140729_122522@gmail.com</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Validating member.get API response against MongoDB</td></tr>
+<tr><td> </td></tr>
+<tr><td>MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</td></tr>
+<tr><td>Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : Member = test_20140729_122522 present in Mongo Database with Email-Id = test20140729_122522@gmail.com and UUID = 9132fcc47d5748e4949c5730a8b7cc60</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Proxy is enabled, hence all API requests will go via configured Proxy</td></tr>
+<tr><td> </td></tr>
+<tr><td>/************************************************************************ MEMBER.LOGIN ************************************************************************/</td></tr>
+<tr><td> </td></tr>
+<tr><td>JSON Body for member.login : id=test_20140729_122522&password=20140729_122522</td></tr>
+<tr><td>API - postRestRequest :: Data will be submitted as <POST>
+
+: id=test_20140729_122522&password=20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/login?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</td></tr>
+<tr><td> </td></tr>
+<tr><td>API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:36.205000","username":"test_20140729_122522","_logged_in":true,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Call Response : {"_updated":"2014-07-29T16:25:36.205000","username":"test_20140729_122522","_logged_in":true,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</td></tr>
+<tr><td> </td></tr>
+<tr><td>login_status fetched from API Response =true</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : _logged_in status in API Response for Member test_20140729_122522 is true</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Validating logged_in status for Member test_20140729_122522 in MongoDB</td></tr>
+<tr><td> </td></tr>
+<tr><td>MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</td></tr>
+<tr><td>Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "_logged_in" : [ { "value" : true}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : _logged_in status for Member test_20140729_122522 is true in MongoDB Database</td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Proxy is enabled, hence all API requests will go via configured Proxy</td></tr>
+<tr><td> </td></tr>
+<tr><td>/************************************************************************ MEMBER.LOGOUT ************************************************************************/</td></tr>
+<tr><td> </td></tr>
+<tr><td>JSON Body for member.logout : id=test_20140729_122522</td></tr>
+<tr><td>API - postRestRequest :: Data will be submitted as <POST>
+
+: id=test_20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/logout?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</td></tr>
+<tr><td> </td></tr>
+<tr><td>API - postRestRequest :: Response from Server after <POST>
+
+{"_updated":"2014-07-29T16:25:40.383000","username":"test_20140729_122522","_logged_in":false,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Call Response : {"_updated":"2014-07-29T16:25:40.383000","username":"test_20140729_122522","_logged_in":false,"_last_login":"2014-07-29T16:25:36.150000","status":"active","_created":"2014-07-29T16:25:26.351000","_id":"9132fcc47d5748e4949c5730a8b7cc60","email":[{"verified":false,"primary":true,"address":"test20140729_122522@gmail.com"}]}</td></tr>
+<tr><td> </td></tr>
+<tr><td>login_status fetched from API Response =false</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : _logged_in status in API Response for Member test_20140729_122522 is false</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Validating logged_in status for Member test_20140729_122522 in MongoDB</td></tr>
+<tr><td> </td></tr>
+<tr><td>MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</td></tr>
+<tr><td>Got the MongoDB Response : { "_id" : "9132fcc47d5748e4949c5730a8b7cc60" , "metadata" : { "username" : [ { "value" : "test_20140729_122522"}] , "_logged_in" : [ { "value" : false}] , "email" : [ { "value" : [ { "address" : "test20140729_122522@gmail.com"}]}]}}</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : _logged_in status for Member test_20140729_122522 is false in MongoDB Database</td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Proxy is enabled, hence all API requests will go via configured Proxy</td></tr>
+<tr><td> </td></tr>
+<tr><td>/************************************************************************ MEMBER.REMOVE ************************************************************************/</td></tr>
+<tr><td> </td></tr>
+<tr><td>JSON Body for member.remove : id=test_20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td>API Request URL:  https://qa.idxapi.nbcuni.com/member/remove?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d346</td></tr>
+<tr><td> </td></tr>
+<tr><td>HTTP RESPONSE: 204</td></tr>
+<tr><td>Validating member.remove Response Code</td></tr>
+<tr><td> </td></tr>
+<tr><td>Response code from member.remove : 204</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : member.remove has successfully deleted the Member : test_20140729_122522</td></tr>
+<tr><td> </td></tr>
+<tr><td>Setting Environment to: QA</td></tr>
+<tr><td>Validating Member present in MongoDB</td></tr>
+<tr><td> </td></tr>
+<tr><td>MongoDB Query :  { "metadata.username.value" : "test_20140729_122522"}</td></tr>
+<tr><td>MongoDB Cursor is empty. No Data found from Database</td></tr>
+<tr><td>No Data found for Member test_20140729_122522 from Database</td></tr>
+<tr><td> </td></tr>
+<tr><td>Passed : Member test_20140729_122522 successfully deleted from MongoDB</td></tr>
+<tr><td> </td></tr>
+</table>
