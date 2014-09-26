@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>test-nbcidx</name>
+=======
+	<name>test-nbcidx-idx</name>
+>>>>>>> e0bfe6667037b0acc975a71a05df166a022bb383
 	<comment></comment>
 	<projects>
 	</projects>

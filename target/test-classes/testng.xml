@@ -7,18 +7,27 @@
 		<!-- Enter group name for specific test scripts-->
 		<groups>
 	 		<run>
+<<<<<<< HEAD
 	 			<include name="full"/>
 	 			<include name="QA_Internal"/>
+=======
+	 			<include name="sanity"/>
+>>>>>>> e0bfe6667037b0acc975a71a05df166a022bb383
 	 		</run>
 		</groups>
 
 		<!-- Add individual packages you wanted to execute below-->
    		<packages>
+<<<<<<< HEAD
    			<package name="com.nbcuni.test.nbcidx.member.put.inputFields.*"/>
+=======
+   			<package name="com.nbcuni.test.nbcidx.sanity.*"/>
+>>>>>>> e0bfe6667037b0acc975a71a05df166a022bb383
 		</packages>
 
 		<!-- Add individual classes you wanted to execute below-->
 		<!-- classes>			
+<<<<<<< HEAD
 			<class name="com.nbcuni.test.nbcidx.member.link_noverify.errorcodes.TC5358_MemberLinkNoVerify_Error_409"/>
 		</classes> -->
 	</test>
@@ -26,5 +35,14 @@
 	<listeners>
     	<listener class-name="com.nbcuni.test.webdriver.CustomWebDriverExceptionListener"/>
 	</listeners>
+=======
+			<class name="com.nbcuni.test.nbcidx.member.get.TC01_SURF_Brand_With_Valid_User_Name"/>
+		</classes> -->
+	</test>
+		
+	<!--<listeners>
+    	<listener class-name="com.nbcuni.test.webdriver.CustomWebDriverExceptionListener"/>
+	</listeners>-->
+>>>>>>> e0bfe6667037b0acc975a71a05df166a022bb383
 
 </suite>
