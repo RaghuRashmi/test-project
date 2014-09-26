@@ -67,7 +67,7 @@ public class TC4995_MemberLink_Error_403 {
 		Reporter.log("Validating API call Response");
 		Reporter.log("");
 		
-		//Generate the API call for member.put.
+		//Generate the API call for member.link.
 		String apicall = al.getApiURL()+"/member/link?API_KEY=65432165432165432165432165432165&BRAND_ID=5876e8579c2f422e99b56d8d0567d347";
 
 		String myJsonBody ="id="+uuid+"&provider=twitter&provider_id=1002470365";

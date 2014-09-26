@@ -14,13 +14,13 @@
 
 		<!-- Add individual packages you wanted to execute below-->
    		<packages>
-   			<package name="com.nbcuni.test.nbcidx.member.*"/>
+   			<package name="com.nbcuni.test.nbcidx.member.put.inputFields.*"/>
 		</packages>
 
 		<!-- Add individual classes you wanted to execute below-->
 		<!-- classes>			
-			<class name="com.nbcuni.test.nbcidx.member.login.social.TC3378_MemberLogin_SocialLogin"/>
-		</classes>  -->
+			<class name="com.nbcuni.test.nbcidx.member.link_noverify.errorcodes.TC5358_MemberLinkNoVerify_Error_409"/>
+		</classes> -->
 	</test>
 		
 	<listeners>

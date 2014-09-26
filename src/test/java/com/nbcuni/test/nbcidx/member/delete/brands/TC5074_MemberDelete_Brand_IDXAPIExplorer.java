@@ -72,7 +72,7 @@ public class TC5074_MemberDelete_Brand_IDXAPIExplorer {
 	@Test(groups = {"full"})
 	public void memberDelete_IDXAPIExplorer() throws Exception {
 				
-		Reporter.log("Validating member.put with brand = IDX API Explorer");
+		Reporter.log("Validating member.delete with brand = IDX API Explorer");
 		Reporter.log("");
 		Reporter.log("1) Creating member using member.put");
 		

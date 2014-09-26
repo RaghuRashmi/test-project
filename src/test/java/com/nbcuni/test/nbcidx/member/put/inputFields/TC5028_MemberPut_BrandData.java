@@ -118,11 +118,9 @@ public class TC5028_MemberPut_BrandData {
 		DBObject DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");		
+		Reporter.log("-- X --");	
+		Reporter.log("");
 
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("2) Updating Brand_Data for member "+username+ " using member.put API and 'brand_data' field");
 				
 		jsonBody = "";
@@ -153,5 +151,6 @@ public class TC5028_MemberPut_BrandData {
 		if(removeReturnCode != 204)
 			fail("Failed : HTTP error code : "+ removeReturnCode);
 		Reporter.log("-- X --");
+		Reporter.log("");
 	}
 }

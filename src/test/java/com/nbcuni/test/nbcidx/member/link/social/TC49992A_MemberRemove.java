@@ -82,10 +82,9 @@ public class TC49992A_MemberRemove {
 	@Test(groups = {"full"})
 	public void memberRemove() throws Exception {
 
-		String uuid  = TC4988_MemberLink_Facebook.uuid; 
-		String email = TC4988_MemberLink_Facebook.email;
-		String username = TC4988_MemberLink_Facebook.username; 
-	
+		String username = TC4988_MemberLink_Facebook.username;
+		String uuid=TC4988_MemberLink_Facebook.uuid;
+		
 		// Get Surf Example Site Brand Id
 		String surfBrandId = al.getSurfBrandId();
 		

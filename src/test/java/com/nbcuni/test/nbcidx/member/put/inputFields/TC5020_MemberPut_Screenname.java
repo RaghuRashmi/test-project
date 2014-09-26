@@ -127,11 +127,9 @@ public class TC5020_MemberPut_Screenname {
 		Assert.assertEquals(bMemberScreenname, true);
 		Reporter.log("Passed : Screenname field created for Member = " +username+ " in MongoDB with value Screenname = "+screenname);
 		Reporter.log("-- X --");	
+		Reporter.log("");
 		
 		screenname = TC01_Create_RandomMemberInfo.randomMemberScreenName;
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("2) Updating Screenname for member "+username+ " with value = "+screenname+" using member.put API and 'screenname' field");
 		
 		jsonBody = "";
@@ -159,13 +157,10 @@ public class TC5020_MemberPut_Screenname {
 		bMemberScreenname = screennameArrlst.get(0).toString().contains(screenname);
 		Assert.assertEquals(bMemberScreenname, true);
 		Reporter.log("Passed : Screenname field updated for Member = " +username+ " in MongoDB with value Screenname = "+screenname);
-		Reporter.log("-- X --");
-					
+		Reporter.log("-- X --");					
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
-		Reporter.log("3) Updating Screenname for member "+username+ " to 'invalid value' using member.put API and 'screenname' field");
 		
+		Reporter.log("3) Updating Screenname for member "+username+ " to 'invalid value' using member.put API and 'screenname' field");
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','screenname':12#$}";
 	

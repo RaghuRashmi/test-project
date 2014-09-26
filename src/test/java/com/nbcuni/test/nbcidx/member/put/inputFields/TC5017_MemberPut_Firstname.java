@@ -123,11 +123,9 @@ public class TC5017_MemberPut_Firstname {
 		Assert.assertEquals(bMemberFirstname, true);
 		Reporter.log("Passed : Firstname field created for Member = " +username+ " in MongoDB with value Firstname = "+firstname);
 		Reporter.log("-- X --");	
+		Reporter.log("");
 		
 		firstname = TC01_Create_RandomMemberInfo.randomMemberFirstName;
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("2) Updating Firstname for member "+username+ " with value = "+firstname+" using member.put API and 'firstname' field");
 		
 		jsonBody = "";
@@ -155,11 +153,10 @@ public class TC5017_MemberPut_Firstname {
 		bMemberFirstname = firstnameArrlst.get(0).toString().contains(firstname);
 		Assert.assertEquals(bMemberFirstname, true);
 		Reporter.log("Passed : Firstname field updated for Member = " +username+ " in MongoDB with value Firstname = "+firstname);
-		Reporter.log("-- X --");
-			
+		Reporter.log("-- X --");			
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+		
+
 		Reporter.log("3) Updating Firstname for member "+username+ " to 'invalid value' using member.put API and 'firstname' field");
 		
 		jsonBody = "";

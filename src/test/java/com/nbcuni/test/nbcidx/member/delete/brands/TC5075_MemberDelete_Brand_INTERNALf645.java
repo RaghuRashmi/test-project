@@ -76,7 +76,7 @@ public class TC5075_MemberDelete_Brand_INTERNALf645 {
 	@Test(groups = {"QA_Internal"})
 	public void memberDelete_INTERNALf645() throws Exception {
 				
-		Reporter.log("Validating member.put with brand = INTERNAL f645");
+		Reporter.log("Validating member.delete with brand = INTERNAL f645");
 		Reporter.log("");
 		Reporter.log("1) Creating member using member.put");
 		

@@ -117,11 +117,9 @@ public class TC5027_MemberPut_Avatar {
 		DBObject DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");		
-				
+		Reporter.log("-- X --");					
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating Avatar for member "+username+ " using member.put API and 'avatar' field");
 				
 		jsonBody = "";
@@ -141,6 +139,7 @@ public class TC5027_MemberPut_Avatar {
 		DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");			
-		Reporter.log("-- X --");			
+		Reporter.log("-- X --");
+		Reporter.log("");
 	}
 }

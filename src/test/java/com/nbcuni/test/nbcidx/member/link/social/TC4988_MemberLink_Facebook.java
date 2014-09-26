@@ -40,7 +40,7 @@ public class TC4988_MemberLink_Facebook {
 	public static String username = "";
 	public static String pw = "";
 	public static String email = "";
-	public static String uuid="";
+	public static String uuid;
 	public static String UIDSignature="";
 	public static String signatureTimestamp;
 	
@@ -105,8 +105,7 @@ public class TC4988_MemberLink_Facebook {
 		// Fetch the UUID from 1st POST 
 		JsonElement id = response.get("_id");
 		String sUUID = id.toString();
-		String sApiUUID = sUUID.substring(1, sUUID.length()-1);
-		uuid=sApiUUID;
+		uuid = sUUID.substring(1, sUUID.length()-1);
 				
 		//Get the DB Response 		
 		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -129,7 +128,7 @@ public class TC4988_MemberLink_Facebook {
 		String dbresponse = DbObj.toString();				
 		boolean bMembername = dbresponse.contains(username);
 		Assert.assertEquals(bMembername, true);
-		Assert.assertEquals(sApiUUID, dbUUID);
+		Assert.assertEquals(uuid, dbUUID);
 		Reporter.log("Passed : Member = " +username+ " present in Mongo Database with UUID = " +dbUUID);
 		Reporter.log("-- X --");
 		Reporter.log("");		
@@ -180,6 +179,5 @@ public class TC4988_MemberLink_Facebook {
 			Reporter.log("Unlinking with Facebook is successful");
 		else
 			Reporter.log("Unlinking with Facebook is Not successful");
-
 	}
 }

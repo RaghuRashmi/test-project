@@ -61,7 +61,7 @@ public class TC4994_MemberLink_Error_401 {
 		//Generate the Content Type for POST. 
 		String myContentType = "application/x-www-form-urlencoded";
 		
-		//Generate the API call for member.put.
+		//Generate the API call for member.link.
 		String apicall = al.getApiURL()+"/member/link?API_KEY=6543216543216543216543216543216#&BRAND_ID="+al.getSurfBrandId();
 
 		Reporter.log("");
@@ -70,11 +70,11 @@ public class TC4994_MemberLink_Error_401 {
 		Reporter.log("Validating API call Response");
 		Reporter.log("");
 
-		String myJsonBody ="id="+uuid+"&provider=twitter&provider_id=1002470365";
 		//Generate the JSON Body in proper format.
+		String myJsonBody ="id="+uuid+"&provider=twitter&provider_id=1002470365";
 		Reporter.log("POST Body= " +myJsonBody);
 				
-		//Send member.put POST Request. 
+		//Send member.link POST Request. 
 		int myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
 		if(myResponseCode == 401)
 			Reporter.log("Passed : Member.link Response code ="+myResponseCode);

@@ -137,9 +137,9 @@ public class TC5079_MemberDelete_Error_400 {
 		
 		Reporter.log("3) Member.delete with blank uuid");
 		String blankuuid ="";
-		int myRemoveCode = ma.memberDELETEResponseCode(api, al, blankuuid, surfBrandId, mydb);
-		if(myRemoveCode != 400)
-			fail("Member.delete Response code ="+myRemoveCode);
+		int myResponseCode = ma.memberDELETEResponseCode(api, al, blankuuid, surfBrandId, mydb);
+		if(myResponseCode != 400)
+			fail("Member.delete Response code ="+myResponseCode);
 		Reporter.log("-- X --");
 		Reporter.log("");		
 		
@@ -157,10 +157,18 @@ public class TC5079_MemberDelete_Error_400 {
 		String apicall = al.getApiURL()+"/member/delete?API_KEY="+al.getDefaultApiKey()+"&BRAND_ID="+surfBrandId;
 	
 		Reporter.log("POST Body= " +myJsonBody);
-		int myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
+		myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
 		if(myResponseCode != 400)
 			fail("Member.delete Response code ="+myResponseCode);
 		Reporter.log("-- X --");
-		Reporter.log("");				
+		Reporter.log("");	
+		
+		Reporter.log("5) Member.delete with multiple brands");
+		myJsonBody ="id="+uuid;
+		myResponseCode = ma.memberDELETEResponseCode(api, al, myJsonBody, "*", mydb);
+		if(myResponseCode != 400)
+			fail("Member.delete Response code ="+myResponseCode);
+		Reporter.log("-- X --");
+		Reporter.log("");
 	}	
 }

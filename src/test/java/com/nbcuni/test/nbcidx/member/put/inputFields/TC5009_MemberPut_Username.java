@@ -120,11 +120,8 @@ public class TC5009_MemberPut_Username {
 		Assert.assertEquals(sApiUUID, dbUUID);
 		Reporter.log("Passed : Member = " +username+ " present in Mongo Database with UUID = " +dbUUID);
 		Reporter.log("-- X --");
-		
-		
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+		Reporter.log("");		
+
 		Reporter.log("2) Updating same member using member.put API for 'username' field");
 		
 		jsonBody = "";
@@ -156,9 +153,7 @@ public class TC5009_MemberPut_Username {
 		Reporter.log("Passed : Username of member with UUID = " +dbUUID+ " got updated with = " +username+ " in MongoDB.");
 		Reporter.log("-- X --");
 		Reporter.log(" ");
-					
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating 'Username' for member "+username+ " to 'Integer value' using member.put API and 'username' field");
 		Reporter.log("");
 		

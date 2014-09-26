@@ -123,11 +123,9 @@ public class TC5021_MemberPut_Birthdate {
 		ArrayList<HashMap<String, String>> birthdateArrlst = api.convertJsonArrayToHashMap(api.getJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"birthdate"));
 		Reporter.log("Latest value for BirthDate of this member is = " +birthdateArrlst.get(0).toString());
 		Reporter.log("Passed : Birthdate field created for Member = " +username+ " in MongoDB with value Birthdate = "+birthdateArrlst.get(0).toString());
-		Reporter.log("-- X --");
-				
+		Reporter.log("-- X --");				
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating only 'month' field of Birthdate for member "+username+ " using member.put API and 'birthdate' field");
 		
 		//Generate the JSON Body for POST 
@@ -138,11 +136,9 @@ public class TC5021_MemberPut_Birthdate {
 		response = ma.memberPUTResponse(api, al, jsonBody, surfBrandId);
 		if(response ==null)
 			fail("Error/Null Response from API call");
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating only 'day' field of Birthdate for member "+username+ " using member.put API and 'birthdate' field");
 		
 		//Generate the JSON Body for POST 
@@ -153,11 +149,9 @@ public class TC5021_MemberPut_Birthdate {
 		response = ma.memberPUTResponse(api, al, jsonBody, surfBrandId);
 		if(response ==null)
 			fail("Error/Null Response from API call");
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("4) Updating only 'year' field of Birthdate for member "+username+ " using member.put API and 'birthdate' field");
 		
 		//Generate the JSON Body for POST 
@@ -169,14 +163,11 @@ public class TC5021_MemberPut_Birthdate {
 		if(response ==null)
 			fail("Error/Null Response from API call");
 		Reporter.log("-- X --");
-		
+		Reporter.log("");
 
 		day=0;
 		month=0;
 		year=0;
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("5) Updating Birthdate for member "+username+ " with value = 0 using member.put API and 'birthdate' field");
 		Reporter.log("");
 		
@@ -190,11 +181,8 @@ public class TC5021_MemberPut_Birthdate {
 		else
 			fail("Failed with Response Code = "+responseCode);
 		Reporter.log("-- X --");
-							
+		Reporter.log("");
 
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("6) Updating 'year' field of Birthdate with 2 digits for member "+username+ " using member.put API and 'birthdate' field");
 		Reporter.log("");
 		
@@ -208,12 +196,9 @@ public class TC5021_MemberPut_Birthdate {
 			Reporter.log("Passed : member.put is not accepting 2 digit value for 'year' field of Birthdate.");
 		else
 			fail("Failed with Response Code = "+responseCode);
-		Reporter.log("-- X --");
-				
+		Reporter.log("-- X --");		
+		Reporter.log("");
 		
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("7) Updating Birthdate for member "+username+ " with 'invalid string value' using member.put API and 'birthdate' field");
 		Reporter.log("");
 		

@@ -69,10 +69,11 @@ public class TC5091_MemberUndelete_Error_400 {
      * 
      * @throws Exception - error
      */
-	@Test(groups = {"full1"})
+	@Test(groups = {"full"})
 	public void memberUndelete_error400() throws Exception {
 
 		// 1) Creating random member
+		Reporter.log("1) Creating random member");
 		String timeStamp = al.getCurrentTimestamp();
 		randomMemberName = "test_"+timeStamp;
 		randomPassword = timeStamp;
@@ -80,7 +81,7 @@ public class TC5091_MemberUndelete_Error_400 {
 		
 		Reporter.log(" ");
 		Reporter.log("/************************ Creating Random Member ********************************/");
-		Reporter.log("1) Random Member Created with below information =>");
+		Reporter.log("Random Member Created with below information =>");
 		Reporter.log(" ");
 		Reporter.log("Member Name : " + randomMemberName);
 		Reporter.log("Password : " + randomPassword);
@@ -99,13 +100,14 @@ public class TC5091_MemberUndelete_Error_400 {
 		
 		//Send member.put POST Request 
 		JsonObject response = ma.memberPUTResponse(api, al, myJsonBody, surfBrandId);
-				
+		if(response ==null)
+			fail("Error/Null Response from API call");
+		
 		// Fetch the UUID from 1st POST 
 		JsonElement id = response.get("_id");
 		String sUUID = id.toString();
-		String sApiUUID = sUUID.substring(1, sUUID.length()-1);
-		uuid=sApiUUID;
-				
+		uuid = sUUID.substring(1, sUUID.length()-1);
+						
 		//Get the DB Response 		
 		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Reporter.log("Validating Member present in MongoDB");
@@ -128,36 +130,45 @@ public class TC5091_MemberUndelete_Error_400 {
 
 		boolean bMembername = dbresponse.contains(randomMemberName);
 		Assert.assertEquals(bMembername, true);
-		Assert.assertEquals(sApiUUID, dbUUID);
+		Assert.assertEquals(uuid, dbUUID);
 		Reporter.log("Passed : Member = " +randomMemberName+ " present in Mongo Database with UUID = " +dbUUID);
 		Reporter.log("-- X --");
 		Reporter.log("");		
 		
-		Reporter.log("3) Member.remove with blank postbody");
-		myJsonBody ="";
-		int myRemoveCode = ma.memberREMOVEResponseCode(api, al, myJsonBody, surfBrandId, randomMemberName, uuid, mydb);
-		if(myRemoveCode != 400)
-			fail("Member.remove Response code ="+myRemoveCode);
+		Reporter.log("3) Member.undelete with blank uuid");
+		String blankuuid ="";
+		int myResponseCode = ma.memberDELETEResponseCode(api, al, blankuuid, surfBrandId, mydb);
+		if(myResponseCode != 400)
+			fail("Member.delete Response code ="+myResponseCode);
+		Reporter.log("-- X --");
+		Reporter.log("");		
+		
+		Reporter.log("4) Member.undelete with paramater 'i'");
+		Reporter.log("");
+		myJsonBody ="i="+uuid;
+		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.UNDELETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		Reporter.log("Validating API call Response");
+		Reporter.log("");
+				
+		//Generate the Content Type for POST. 
+		String myContentType = "application/x-www-form-urlencoded";
+		
+		//Generate the API call for member.put.
+		String apicall = al.getApiURL()+"/member/undelete?API_KEY="+al.getDefaultApiKey()+"&BRAND_ID="+surfBrandId;
+	
+		Reporter.log("POST Body= " +myJsonBody);
+		myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
+		if(myResponseCode != 400)
+			fail("Member.undelete Response code ="+myResponseCode);
+		Reporter.log("-- X --");
+		Reporter.log("");	
+		
+		Reporter.log("5) Member.undelete with multiple brands");
+		myJsonBody ="id="+uuid;
+		myResponseCode = ma.memberUNDELETEResponseCode(api, al, myJsonBody, "*", mydb);
+		if(myResponseCode != 400)
+			fail("Member.undelete Response code ="+myResponseCode);
 		Reporter.log("-- X --");
 		Reporter.log("");
-		
-		
-		Reporter.log("4) Member.remove with paramater 'i'");
-		myJsonBody ="i="+randomMemberName;
-		myRemoveCode = ma.memberREMOVEResponseCode(api, al, myJsonBody, surfBrandId, randomMemberName, uuid, mydb);
-		if(myRemoveCode != 400)
-			fail("Member.remove Response code ="+myRemoveCode);
-		Reporter.log("-- X --");
-		Reporter.log("");
-		
-		
-		Reporter.log("5) Member.remove with no 'username'");
-		myJsonBody ="username="+randomMemberName;
-		myRemoveCode = ma.memberREMOVEResponseCode(api, al, myJsonBody, surfBrandId, randomMemberName, uuid, mydb);
-		if(myRemoveCode != 400)
-			fail("Member.remove Response code ="+myRemoveCode);
-		Reporter.log("-- X --");
-		Reporter.log("");
-		
 	}	
 }

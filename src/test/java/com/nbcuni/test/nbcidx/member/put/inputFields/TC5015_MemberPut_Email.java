@@ -123,12 +123,9 @@ public class TC5015_MemberPut_Email {
 		Assert.assertEquals(bMemberEmail, true);
 		Reporter.log("Passed : Email-Id created for Member = " +username+ " in MongoDB with value email = "+email);
 		Reporter.log("-- X --");
-		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating Email-Id for member "+username+ " using member.put API and 'email' field");
-		
 		email = username+"@gmail.com";
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','email':'"+email+"'}";
@@ -158,11 +155,9 @@ public class TC5015_MemberPut_Email {
 		bMemberEmail = emailArrlst.get(0).toString().contains(email);
 		Assert.assertEquals(bMemberEmail, true);
 		Reporter.log("Passed : Email-Id updated for Member = " +username+ " in MongoDB with value email = "+email);
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating Email-Id for member "+username+ " for 'verified' and 'primary' fields using member.put API and 'email' field");
 		
 		jsonBody = "";
@@ -196,10 +191,8 @@ public class TC5015_MemberPut_Email {
 		Assert.assertEquals(bMemberEmail, true);
 		Reporter.log("Passed : Email-Id updated for Member = " +username+ " in MongoDB with value email = "+email +", 'verified': true and 'primary': true");
 		Reporter.log("-- X --");	
+		Reporter.log("");
 
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("4) Updating Email-Id for member "+username+ " with 2 Email-Ids and for 'verified' and 'primary' fields using member.put API and 'email' field");
 		
 		jsonBody = "";
@@ -232,11 +225,9 @@ public class TC5015_MemberPut_Email {
 		bMemberEmail = emailArrlst.get(0).toString().contains(email);
 		Assert.assertEquals(bMemberEmail, true);
 		Reporter.log("Passed : Email-Id updated for Member = "+username+" in MongoDB with 2 values Email-Id1 = "+email+", Email-Id2 = "+emailSec);
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("5) Updating Email-Id for member "+username+ " to 'invalid format of Email-Id' using member.put API and 'email' field");
 		Reporter.log("");
 		
@@ -250,11 +241,9 @@ public class TC5015_MemberPut_Email {
 			Reporter.log("Passed : member.put is not accepting invalid format for 'email' field");
 		else
 			fail("Failed with Response Code = "+responseCode);
-		Reporter.log("-- X --");		
-		
+		Reporter.log("-- X --");			
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("6) Updating Email-Id for member "+username+ " to 'invalid format of Email-Id without @ ' using member.put API and 'email' field");
 		Reporter.log("");
 		
@@ -271,6 +260,8 @@ public class TC5015_MemberPut_Email {
 		Reporter.log("-- X --");
 
 		TC01_Create_RandomMemberInfo.randomEmail=email;
+		Reporter.log("-- X --");			
+		Reporter.log("");
 		
 	}
 }

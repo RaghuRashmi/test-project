@@ -153,12 +153,17 @@ public class MemberAPIs {
 		String myJsonBodyAfterFormat=myAL.convertIntoJsonFormat(myJsonBody);
 				
 		//Send member.login POST Request. 
+		myResponse=null;
 		myResponse = myAPI.getRootObjectsFromResponseBody(myAPI.postRestRequest(apicall, myJsonBodyAfterFormat, myContentType));
+		if(myResponse == null)
+			fail("member.login POST request failed");		
+	
 		JsonElement apiLoginStatus = myResponse.get("_logged_in");
 		
 		Reporter.log("");
 		Reporter.log("_logged_in status of Member "+ memberId + " in member.get API Response = " +apiLoginStatus.toString());
 		Reporter.log("");
+		
 		//Check for _logged_in status = true in API Response
 		boolean bloginStatus=apiLoginStatus.toString().equals("true");
 		Assert.assertEquals(bloginStatus, true);
@@ -263,11 +268,14 @@ public class MemberAPIs {
 					
 		//Send member.logout POST Request. 
 		myResponse = myAPI.getRootObjectsFromResponseBody(myAPI.postRestRequest(apicall, myJsonBodyAfterFormat, myContentType));
+		if(myResponse == null)
+			fail("member.logout POST request failed");
 		JsonElement apiLoginStatus = myResponse.get("_logged_in");
 		
 		Reporter.log("");
 		Reporter.log("_logged_in status of Member "+ memberId + " in member.get API Response = " +apiLoginStatus.toString());
 		Reporter.log("");
+		
 		//Check for _logged_in status = false in API Response
 		boolean bloginStatus=apiLoginStatus.toString().equals("false");
 		Assert.assertEquals(bloginStatus, true);
@@ -412,7 +420,7 @@ public class MemberAPIs {
 	 * @return Response from member.link_noverify.
 	 * @throws Exception 
 	 */
-	public int memberLINKNoVerifyResponse(API myAPI, AppLib myAL, String myJsonBody, String myBrandId) throws Exception {
+	public int memberLINKNoVerifyResponseCode(API myAPI, AppLib myAL, String myJsonBody, String myBrandId) throws Exception {
 		
 		String apicall=null;
 						
@@ -613,6 +621,67 @@ public class MemberAPIs {
 				//Check for status = deleted in MongoDB
 				String dbStatus =  DbObj.get("_status").toString(); 
 				boolean bStatus=dbStatus.toString().equals("deleted");
+				Assert.assertEquals(bStatus, true);
+				Reporter.log("Passed : Member "+uuid+ " still present in MongoDB Collection = "+myAL.IDX_MEMBERS_COLLECTION +" with 'status' value = "+dbStatus.toString());
+			}
+			else
+				fail("Member "+uuid+" got removed from MongoDB Collection = "+myAL.IDX_MEMBERS_COLLECTION);
+			Reporter.log(" ");		
+		}		
+		return responseCode;
+	}
+	
+	/** 
+	 * Method for IDX member.undelete API Response Code.
+	 * @return Response Code from member.undelete.
+	 * @throws Exception 
+	 */
+	public int memberUNDELETEResponseCode(API myAPI, AppLib myAL, String uuid, String myBrandId, DB myDB) throws Exception {
+		
+		String apicall=null;
+			
+		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.UNDELETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		Reporter.log("Validating API call Response");
+		Reporter.log("");
+		
+		//Generate the Content Type for POST. 
+		String myContentType = "application/x-www-form-urlencoded";
+		
+		//Generate the API call for member.delete.
+		apicall = myAL.getApiURL()+"/member/undelete?API_KEY="+myAL.getDefaultApiKey()+"&BRAND_ID="+myBrandId;
+	
+		//Generate the JSON Body in proper format.
+		String postBody="id="+uuid;
+				
+		//Send member.undelete POST Request.
+		int responseCode = myAL.postHTTPReponseCode(apicall, postBody, myContentType);
+		if(responseCode == 200)
+		{
+			Reporter.log("member.undelete has successfully regained the Member : "+uuid);
+			Reporter.log("");
+			
+			// Get the DB Response
+			Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Reporter.log("Validating Member status should be 'active' in MongoDB");
+			Reporter.log("");
+		
+			// Build search query for idx_members collection.
+			BasicDBObject idx_members_searchQuery = new BasicDBObject();
+			idx_members_searchQuery.put("_id", uuid);
+			idx_members_searchQuery.put("metadata.username.brand_id",myBrandId);
+			
+			BasicDBObject fields = new BasicDBObject();
+			fields.put("_id", 1);
+			fields.put("_status", 1);
+		
+			// Check idx_members collection.
+			DBObject DbObj = null;
+			DbObj = myAL.getMongoDbResponse(myDB, idx_members_searchQuery, fields, myAL.IDX_MEMBERS_COLLECTION, myAL.FIND);	
+			if(DbObj!=null)
+			{
+				//Check for status = deleted in MongoDB
+				String dbStatus =  DbObj.get("_status").toString(); 
+				boolean bStatus=dbStatus.toString().equals("active");
 				Assert.assertEquals(bStatus, true);
 				Reporter.log("Passed : Member "+uuid+ " still present in MongoDB Collection = "+myAL.IDX_MEMBERS_COLLECTION +" with 'status' value = "+dbStatus.toString());
 			}

@@ -169,6 +169,7 @@ public class TC3102_MemberRemove_RemoveByBrand {
 		Reporter.log("--X--");
 		Reporter.log(" ");
 		
+		/*
 		Reporter.log("11) member.get, Getting the IDX API EXPL member UUID from SURF brand");
 		parameters= "id="+uuidTwo;
 		returnCode = ma.memberGetResponseCode(api, al, parameters, surfBrandId);
@@ -179,6 +180,7 @@ public class TC3102_MemberRemove_RemoveByBrand {
 		Reporter.log(" ");
 		Reporter.log("--X--");
 		Reporter.log(" ");
+		*/
 		
 		Reporter.log("12) member.get, Getting the SURF member UUID from IDX API EXPL brand");
 		parameters= "id="+uuidOne;

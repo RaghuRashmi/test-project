@@ -3,7 +3,6 @@ package com.nbcuni.test.nbcidx.member.link.errorcodes;
 import static org.testng.AssertJUnit.fail;
 
 import java.net.Proxy;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +20,6 @@ import com.google.gson.JsonObject;
 import com.mongodb.DB;
 import com.nbcuni.test.nbcidx.AppLib;
 import com.nbcuni.test.nbcidx.MemberAPIs;
-import com.nbcuni.test.nbcidx.member.link.social.TC4988_MemberLink_Facebook;
 import com.nbcuni.test.webdriver.API;
 import com.nbcuni.test.webdriver.CustomWebDriver;
 

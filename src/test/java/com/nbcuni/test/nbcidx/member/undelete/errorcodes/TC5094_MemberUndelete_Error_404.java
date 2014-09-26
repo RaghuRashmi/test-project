@@ -11,7 +11,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.mongodb.DB;
-import com.mongodb.DBObject;
 import com.nbcuni.test.nbcidx.AppLib;
 import com.nbcuni.test.nbcidx.MemberAPIs;
 import com.nbcuni.test.webdriver.API;
@@ -32,10 +31,6 @@ public class TC5094_MemberUndelete_Error_404 {
 	private MemberAPIs ma;
 	private DB mydb;
 	private Proxy proxy=null;
-	
-	String UUID;
-	DBObject myObj;
-	String dbresponse;
 
 	/**
 	 * Instantiate the TestNG Before Class Method.
@@ -79,36 +74,22 @@ public class TC5094_MemberUndelete_Error_404 {
      * 
      * @throws Exception - error
      */
-
-	@Test(groups = {"full1"})
+	@Test(groups = {"full"})
 	public void memberUndelete_error404() throws Exception {
 
-		String name="test"+TC5091_MemberUndelete_Error_400.randomMemberName;
-		String actualName=TC5091_MemberUndelete_Error_400.randomMemberName;
+		String UUID = al.createRandomUUID();
 		String uuid=TC5091_MemberUndelete_Error_400.uuid; 
 		
 		Reporter.log("");
-		Reporter.log("1) Member.remove with non-existent member");
-		String myJsonBody ="id="+name;
+		Reporter.log("1) Member.undelete with non-existent member");
 
 		// Get Surf Example Site Brand Id
 		String surfBrandId = al.getSurfBrandId();
 		
-		int myResonseCode = ma.memberREMOVEResponseCode(api, al, myJsonBody, surfBrandId, name, uuid, mydb);
+		int myResonseCode = ma.memberUNDELETEResponseCode(api, al, UUID, surfBrandId, mydb);
 		if(myResonseCode != 404)
-			fail("Member.remove Response code ="+myResonseCode);
-		Reporter.log("--X--");
-		
-		
-		Reporter.log("");
-		Reporter.log("2) Member.remove with existent member but different brand");
-		myJsonBody ="id="+uuid;
-
-		// Get Surf Example Site Brand Id
-		String apiExplBrandId = al.getAPIExplBrandId();
-		
-		myResonseCode = ma.memberREMOVEResponseCode(api, al, myJsonBody, apiExplBrandId, actualName, uuid, mydb);
-		if(myResonseCode != 404)
-			fail("Member.remove Response code ="+myResonseCode);
+			fail("Member.undelete Response code ="+myResonseCode);
+		Reporter.log("--X--");		
+		Reporter.log("");		
 	}
 }

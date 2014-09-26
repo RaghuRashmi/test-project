@@ -124,13 +124,10 @@ public class TC5018_MemberPut_Middlename {
 		Assert.assertEquals(bMemberMiddlename, true);
 		Reporter.log("Passed : Middlename field created for Member = " +username+ " in MongoDB with value Middlename = "+middlename);
 		Reporter.log("-- X --");
-						
-		middlename = TC01_Create_RandomMemberInfo.randomMemberMiddleName;
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
-		Reporter.log("2) Updating Middlename for member "+username+ " with value = "+middlename+" using member.put API and 'middlename' field");
 		
+		middlename = TC01_Create_RandomMemberInfo.randomMemberMiddleName;
+		Reporter.log("2) Updating Middlename for member "+username+ " with value = "+middlename+" using member.put API and 'middlename' field");
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','middlename':'"+middlename+"'}";
 				
@@ -139,7 +136,7 @@ public class TC5018_MemberPut_Middlename {
 		if(response ==null)
 			fail("Error/Null Response from API call");
 
-		//Get the DB Response *
+		//Get the DB Response 
 		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Reporter.log("Validating Middlename of Member in MongoDB");
 		Reporter.log("");
@@ -156,13 +153,10 @@ public class TC5018_MemberPut_Middlename {
 		bMemberMiddlename = middlenameArrlst.get(0).toString().contains(middlename);
 		Assert.assertEquals(bMemberMiddlename, true);
 		Reporter.log("Passed : Middlename field updated for Member = " +username+ " in MongoDB with value Middlename = "+middlename);
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating Middlename for member "+username+ " to 'invalid value' using member.put API and 'middlename' field");
-		
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','middlename':~-34(}";
 

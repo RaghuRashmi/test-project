@@ -112,16 +112,15 @@ public class TC5080_MemberDelete_Error_401 {
 		Reporter.log("Validating API call Response");
 		Reporter.log("");
 
-		myJsonBody ="id="+uuid;
 		//Generate the JSON Body in proper format.
+		myJsonBody ="id="+uuid;
 		Reporter.log("POST Body= " +myJsonBody);
 				
-		//Send member.put POST Request. 
+		//Send member.delete POST Request. 
 		myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
 		if(myResponseCode != 401)
 			fail("Member.delete Response code ="+myResponseCode);
 		Reporter.log("-- X --");
 		Reporter.log("");		
-	}
-	
+	}	
 }

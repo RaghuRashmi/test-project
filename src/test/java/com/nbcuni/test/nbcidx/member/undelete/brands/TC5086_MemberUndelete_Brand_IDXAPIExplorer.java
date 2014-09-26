@@ -3,8 +3,6 @@ package com.nbcuni.test.nbcidx.member.undelete.brands;
 import static org.testng.AssertJUnit.fail;
 
 import java.net.Proxy;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -39,9 +37,6 @@ public class TC5086_MemberUndelete_Brand_IDXAPIExplorer {
 	private DB mydb;
 	private Proxy proxy=null;
 	
-	JsonObject response=null;
-	int responseCode;
-	
 	/**
 	 * Instantiate the TestNG Before Class Method.
 	 */
@@ -74,10 +69,12 @@ public class TC5086_MemberUndelete_Brand_IDXAPIExplorer {
 	/**
      * Instantiate the TestNG Test Method.
      */
-	@Test(groups = {"full1"})
+	@Test(groups = {"full"})
 	public void memberUndelete_IDXAPIExplorer() throws Exception {
-				
-		Reporter.log("Validating member.put with brand = IDX API Explorer");
+		
+		Reporter.log("Validating member.undelete with brand = IDX API Explorer");
+		Reporter.log("");
+		Reporter.log("1) Creating member using member.put");
 		
 		String username = al.getCurrentTimestamp();
 				
@@ -89,12 +86,13 @@ public class TC5086_MemberUndelete_Brand_IDXAPIExplorer {
 		
 		//Send member.put POST Request 
 		JsonObject response = ma.memberPUTResponse(api, al, jsonBody, idxAPIExplBrandId);
+		if(response ==null)
+			fail("Error/Null Response from API call");
 		
 		// Fetch the UUID from 1st POST 
 		JsonElement id = response.get("_id");
 		String sUUID = id.toString();
 		String sApiUUID = sUUID.substring(1, sUUID.length()-1);
-
 		
 		//Get the DB Response 		
 		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -126,74 +124,52 @@ public class TC5086_MemberUndelete_Brand_IDXAPIExplorer {
 		Assert.assertEquals(bMembername, true);
 		Assert.assertEquals(sApiUUID, dbUUID);
 		Reporter.log("Passed : Member = " +username+ " present in Mongo Database with UUID = " +dbUUID);
-			
-		JsonObject DBResponse =  al.JsonObjectFromMongoDBObject(DbObj);
-		
-		// Checking brand_data
-		ArrayList<HashMap<String, String>> brandDataArrlst = api.convertJsonArrayToHashMap(api.getJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"brand_data"));
-		boolean bMemberBrandData = brandDataArrlst.get(0).toString().contains("Mydata:Any-Brand");
-		Reporter.log(brandDataArrlst.get(0).toString());
-		Assert.assertEquals(bMemberBrandData, true);
-		Reporter.log("Passed : Latest 'brand_data' of Member = " +username+ " in MongoDB is = " +brandDataArrlst.get(0).toString());
+		Reporter.log("-- X --");
 		Reporter.log("");
-
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
-		Reporter.log("Updating fields for member "+username+ " using member.put API");
-		
-		jsonBody = "";
-		jsonBody ="{'_id': '"+sApiUUID+"','suffix': 'MS','phone': [{'mobile': true,'number': '8884444333'}],'prefix': 'Dr.','brand_data': {'MyChoice': 'IDX API Explorer'},'address': [{'address1': '1070 Morris Ave','address2': 'Apt # 1254','city': 'Union','state': 'NJ','postalcode': '07083','country': 'US','primary': true,'type': 'home'}],'avatar': 'http://www.mbc.com/','screenname': 'Master'}";
-				
-		
-		//Send member.put POST Request 
-		response = ma.memberPUTResponse(api, al, jsonBody, idxAPIExplBrandId);
-				
-		//Get the DB Response
-		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		Reporter.log("Validating fields updated in MongoDB");
-		Reporter.log("");
-				
-		DbObj = null;
-		DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
-		if(DbObj==null)
-			fail("MongoDB Cursor is empty. No Data found from Database");
-		
-		DBResponse =  al.JsonObjectFromMongoDBObject(DbObj);
-		
-		
-		// Checking brand_data
-		brandDataArrlst = api.convertJsonArrayToHashMap(api.getJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"brand_data"));
-		bMemberBrandData = brandDataArrlst.get(0).toString().contains("MyChoice:IDX API Explorer");
-		Reporter.log(brandDataArrlst.get(0).toString());
-		Assert.assertEquals(bMemberBrandData, true);
-		Reporter.log("Passed : Latest 'brand_data' of Member = " +username+ " in MongoDB is = " +brandDataArrlst.get(0).toString());
+	
+		Reporter.log("2) Deleting the member from IDX using member.delete");
+		jsonBody= "id="+sApiUUID;
+		int responseCode = ma.memberDELETEResponseCode(api, al, sApiUUID, idxAPIExplBrandId, mydb);
+		if(responseCode != 204)
+			fail("Failed : HTTP error code : "+ responseCode);
+		Reporter.log("-- X --");
 		Reporter.log("");
 		
-		// Checking Suffix
-		ArrayList<HashMap<String, String>> suffixArrlst = api.convertJsonArrayToHashMap(api.getJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"suffix"));
-		boolean bMemberSuffix = suffixArrlst.get(0).toString().contains("MS");
-		Assert.assertEquals(bMemberSuffix, true);
-		Reporter.log("Passed : Latest 'suffix' of Member = " +username+ " in MongoDB is "+suffixArrlst.get(0).toString());
-		Reporter.log("");
-				
-		// Checking Prefix
-		ArrayList<HashMap<String, String>> prefixArrlst = api.convertJsonArrayToHashMap(api.getJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"prefix"));
-		boolean bMemberPrefix = prefixArrlst.get(0).toString().contains("Dr.");
-		Assert.assertEquals(bMemberPrefix, true);
-		Reporter.log("Passed : Latest 'prefix' of Member = " +username+ " in MongoDB is "+prefixArrlst.get(0).toString());
+		Reporter.log("3) Verifying the member.get does not return the member");
+		jsonBody= "id="+sApiUUID;
+		responseCode = ma.memberGetResponseCode(api, al, jsonBody, idxAPIExplBrandId);
+		if(responseCode == 404)
+			Reporter.log("Passed :member.get does not return the member and gives ERROR : "+ responseCode);
+		else 
+			fail("Failed : HTTP code : "+ responseCode);
+		Reporter.log("-- X --");
 		Reporter.log("");
 		
-		// Checking Screenname
-		ArrayList<HashMap<String, String>> screennameArrlst = api.convertJsonArrayToHashMap(api.getJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"screenname"));
-		boolean bMemberScreenname = screennameArrlst.get(0).toString().contains("Master");
-		Assert.assertEquals(bMemberScreenname, true);
-		Reporter.log("Passed : Latest 'screenname' of Member = " +username+ " in MongoDB is "+screennameArrlst.get(0).toString());
+		Reporter.log("4) Undeleting the member from IDX using member.undelete");
+		jsonBody= "id="+sApiUUID;
+		responseCode = ma.memberUNDELETEResponseCode(api, al, sApiUUID, idxAPIExplBrandId, mydb);
+		if(responseCode != 200)
+			fail("Failed : HTTP error code : "+ responseCode);
+		Reporter.log("-- X --");
 		Reporter.log("");
 		
-		Reporter.log("Removing the member from IDX");
+		Reporter.log("5) Verifying the member.get now returns the member again");
+		jsonBody= "id="+sApiUUID;
+		responseCode = ma.memberGetResponseCode(api, al, jsonBody, idxAPIExplBrandId);
+		if(responseCode == 200)
+			Reporter.log("Passed : member.get is now returning the member again");
+		else 
+			fail("Failed : HTTP code : "+ responseCode);
+		Reporter.log("-- X --");
+		Reporter.log("");
+					
+		Reporter.log("6) Removing the member from IDX using member.remove");
 		jsonBody= "id="+sApiUUID;
 		int removeReturnCode = ma.memberREMOVEResponseCode(api, al, jsonBody, idxAPIExplBrandId, username, sApiUUID, mydb);
 		if(removeReturnCode != 204)
 			fail("Failed : HTTP error code : "+ removeReturnCode);
+		Reporter.log("-- X --");
+		Reporter.log("");
+	
 	}
 }

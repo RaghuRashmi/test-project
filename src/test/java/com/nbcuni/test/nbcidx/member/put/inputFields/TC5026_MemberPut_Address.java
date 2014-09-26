@@ -114,11 +114,9 @@ public class TC5026_MemberPut_Address {
 		DBObject DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("--X--");
-	
+		Reporter.log("--X--");	
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating 'Country' and 'State' for member "+username+ " using member.put API and 'address' field");
 		
 		jsonBody = "";
@@ -138,11 +136,9 @@ public class TC5026_MemberPut_Address {
 		DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");	
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Validating 'Postal code for Format 99999' for member "+username+ " using member.put API and 'address' field");
 		
 		jsonBody = "";
@@ -153,10 +149,8 @@ public class TC5026_MemberPut_Address {
 		if(response ==null)
 			fail("Error/Null Response from API call");
 		Reporter.log("-- X --");
+		Reporter.log("");
 
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("4) Validating 'Postal code for Format 99999-9999' for member "+username+ " using member.put API and 'address' field");
 		
 		jsonBody = "";
@@ -166,12 +160,9 @@ public class TC5026_MemberPut_Address {
 		response = ma.memberPUTResponse(api, al, jsonBody, surfBrandId);
 		if(response ==null)
 			fail("Error/Null Response from API call");
-		Reporter.log("-- X --");
+		Reporter.log("-- X --");		
+		Reporter.log("");
 
-		
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("5) Validating 'Postal code for Format string other than digit' for member "+username+ " using member.put API and 'address' field");
 		Reporter.log("");
 			
@@ -185,6 +176,6 @@ public class TC5026_MemberPut_Address {
 		else
 			fail("Failed with Response Code = "+responseCode);
 		Reporter.log("-- X --");
-
+		Reporter.log("");
 	}
 }

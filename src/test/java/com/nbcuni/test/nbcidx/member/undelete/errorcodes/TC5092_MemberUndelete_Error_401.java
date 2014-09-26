@@ -56,72 +56,71 @@ public class TC5092_MemberUndelete_Error_401 {
      * 
      * @throws Exception - error
      */
-	@Test(groups = {"full1"})
+	@Test(groups = {"full"})
 	public void memberUndelete_error401() throws Exception {
 
-		String name=TC5091_MemberUndelete_Error_400.randomMemberName;
+		String uuid=TC5091_MemberUndelete_Error_400.uuid; 
 		
 		//Generate the Content Type for POST. 
 		String myContentType = "application/x-www-form-urlencoded";
 		
 		//Generate the API call for member.put.
-		String apicall = al.getApiURL()+"/member/remove?API_KEY=6543216543216543216543216543216&BRAND_ID="+al.getSurfBrandId();
+		String apicall = al.getApiURL()+"/member/undelete?API_KEY=6543216543216543216543216543216&BRAND_ID="+al.getSurfBrandId();
 
 		Reporter.log("");
-		Reporter.log("1) Member.remove with invalid API_KEY : ");
-		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.REMOVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		Reporter.log("1) Member.undelete with invalid API_KEY : ");
+		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.UNDELETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Reporter.log("Validating API call Response");
 		Reporter.log("");
 
-		String myJsonBody ="id="+name;
+		String myJsonBody ="id="+uuid;
 		//Generate the JSON Body in proper format.
 		Reporter.log("POST Body= " +myJsonBody);
 				
 		//Send member.put POST Request. 
 		int myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
 		if(myResponseCode != 401)
-			fail("Member.remove Response code ="+myResponseCode);
-		Reporter.log("--X--");
-		
+			fail("Member.undelete Response code ="+myResponseCode);
+		Reporter.log("--X--");		
 		
 		//Generate the API call for member.put.
-		apicall = al.getApiURL()+"/member/remove?API_KEY=&BRAND_ID="+al.getSurfBrandId();
+		apicall = al.getApiURL()+"/member/undelete?API_KEY=&BRAND_ID="+al.getSurfBrandId();
 
 		Reporter.log("");
-		Reporter.log("2) Member.remove with blank API_KEY : ");
-		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.REMOVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		Reporter.log("2) Member.undelete with blank API_KEY : ");
+		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.UNDELETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Reporter.log("Validating API call Response");
 		Reporter.log("");
 
-		myJsonBody ="id="+name;
+		myJsonBody ="id="+uuid;
 		//Generate the JSON Body in proper format.
 		Reporter.log("POST Body= " +myJsonBody);
 				
 		//Send member.put POST Request. 
 		myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
 		if(myResponseCode != 401)
-			fail("Member.remove Response code ="+myResponseCode);
+			fail("Member.undelete Response code ="+myResponseCode);
 		Reporter.log("--X--");
-		
-		
+				
 		//Generate the API call for member.put.
-		apicall = al.getApiURL()+"/member/remove?API_KEY=6543216543216543216543216543216#&BRAND_ID="+al.getSurfBrandId();
+		apicall = al.getApiURL()+"/member/undelete?API_KEY=6543216543216543216543216543216#&BRAND_ID="+al.getSurfBrandId();
 
 		Reporter.log("");
-		Reporter.log("3) Member.remove with invalid API_KEY : ");
-		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.REMOVE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		Reporter.log("3) Member.undelete with invalid API_KEY : ");
+		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MEMBER.UNDELETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Reporter.log("Validating API call Response");
 		Reporter.log("");
 
-		myJsonBody ="id="+name;
 		//Generate the JSON Body in proper format.
+		myJsonBody ="id="+uuid;
 		Reporter.log("POST Body= " +myJsonBody);
 				
-		//Send member.put POST Request. 
+		//Send member.undelete POST Request. 
 		myResponseCode = al.postHTTPReponseCode(apicall, myJsonBody, myContentType);
 		if(myResponseCode != 401)
-			fail("Member.remove Response code ="+myResponseCode);
-				
-	}
+			fail("Member.undelete Response code ="+myResponseCode);
+		Reporter.log("-- X --");
+		Reporter.log("");		
 	
+	}	
 }

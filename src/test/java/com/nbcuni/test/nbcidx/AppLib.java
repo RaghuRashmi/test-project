@@ -112,6 +112,7 @@ public class AppLib {
 	private String socialUsername = "";
 	private String socialPassword = "";
 	private String socialValidEmail = "";
+	private String socialValidYahooEmail = "";
 	
 	private String facebookUID = "";
 	private String facebookProviderUID = "";
@@ -193,6 +194,7 @@ public class AppLib {
 			socialUsername  = configProperties.getProperty("Social.Username");
 			socialPassword  = configProperties.getProperty("Social.Password");
 			socialValidEmail  = configProperties.getProperty("Social.Email-Id");
+			socialValidYahooEmail  = configProperties.getProperty("Social.Yahoo.Email-Id");
 			facebookUID  = configProperties.getProperty("Facebook_UID");
 			facebookProviderUID  = configProperties.getProperty("Facebook_ProviderUID");
 			linkedInUID = configProperties.getProperty("LinkedIn_UID");
@@ -219,6 +221,9 @@ public class AppLib {
 	}
 	public final String getSocialValidEmail() throws Exception {
 		return this.socialValidEmail;
+	}
+	public final String getSocialYahooValidEmail() throws Exception {
+		return this.socialValidYahooEmail;
 	}
 	
 	/**

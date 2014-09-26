@@ -121,11 +121,9 @@ public class TC5023_MemberPut_Prefix {
 		DBObject DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");
-			
+		Reporter.log("-- X --");			
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating Prefix for member "+username+ " using member.put API and 'prefix' field");
 		
 		jsonBody = "";
@@ -145,11 +143,9 @@ public class TC5023_MemberPut_Prefix {
 		DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");
-	
+		Reporter.log("-- X --");	
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating Prefix for member "+username+ " using member.put API and 'prefix' field");
 		
 		jsonBody = "";
@@ -170,5 +166,6 @@ public class TC5023_MemberPut_Prefix {
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
 		Reporter.log("-- X --");
+		Reporter.log("");
 	}
 }

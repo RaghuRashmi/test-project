@@ -126,11 +126,9 @@ public class TC5019_MemberPut_Lastname {
 		Assert.assertEquals(bMemberLastname, true);
 		Reporter.log("Passed : Lastname field created for Member = " +username+ " in MongoDB with value Lastname = "+lastname);
 		Reporter.log("-- X --");		
+		Reporter.log("");
 		
 		lastname = TC01_Create_RandomMemberInfo.randomMemberLastName;
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("2) Updating Lastname for member "+username+ " with value = "+lastname+" using member.put API and 'lastname' field");
 		
 		jsonBody = "";
@@ -158,13 +156,10 @@ public class TC5019_MemberPut_Lastname {
 		bMemberLastname = lastnameArrlst.get(0).toString().contains(lastname);
 		Assert.assertEquals(bMemberLastname, true);
 		Reporter.log("Passed : Lastname field updated for Member = " +username+ " in MongoDB with value Lastname = "+lastname);
-		Reporter.log("-- X --");
-				
+		Reporter.log("-- X --");				
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating Lastname for member "+username+ " to 'invalid value' using member.put API and 'lastname' field");
-		
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','lastname':@%34}";
 	

@@ -131,7 +131,6 @@ public class TC4168_Auto_Archive_History_Verification {
 		String sUUID = id.toString();
 		String sApiUUID = sUUID.substring(1, sUUID.length()-1);
 		uuid = sApiUUID;
-		System.out.println("UUID : "+sApiUUID);
 			
 		//Get the DB Response	
 		Reporter.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MongoDB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

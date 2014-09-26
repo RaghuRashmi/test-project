@@ -32,10 +32,6 @@ public class TC5083_MemberDelete_Error_502 {
 	private MemberAPIs ma;
 	private DB mydb;
 	private Proxy proxy=null;
-	
-	String UUID;
-	DBObject myObj;
-	String dbresponse;
 
 	/**
 	 * Instantiate the TestNG Before Class Method.
@@ -91,7 +87,7 @@ public class TC5083_MemberDelete_Error_502 {
 		//Generate the Content Type for POST. 
 		String myContentType = "application/x-www-form-urlencoded";
 		
-		//Generate the API call for member.put.
+		//Generate the API call for member.delete.
 		String apicall =  al.getApiURL()+"/member/delete?API_KEY=65432165432165432165432165432165&BRAND_ID=fffff99b56d8d0567d3465876e8579c2";
 		
 		Reporter.log("");
@@ -117,6 +113,5 @@ public class TC5083_MemberDelete_Error_502 {
 			fail("Failed : HTTP error code : "+ removeReturnCode);
 		Reporter.log("-- X --");
 		Reporter.log("");		
-	}
-	
+	}	
 }

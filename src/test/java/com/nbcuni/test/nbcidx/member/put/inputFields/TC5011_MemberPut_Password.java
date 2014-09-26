@@ -110,8 +110,6 @@ public class TC5011_MemberPut_Password {
 		Reporter.log("-- X --");
 		Reporter.log(" ");
 
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("2) Updating 'password' field of member using member.put API");
 		
 		jsonBody = "";

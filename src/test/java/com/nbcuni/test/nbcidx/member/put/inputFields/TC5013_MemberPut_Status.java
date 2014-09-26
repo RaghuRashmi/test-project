@@ -119,11 +119,9 @@ public class TC5013_MemberPut_Status {
 		Assert.assertEquals(bMemberStatus, true);
 		Reporter.log("Passed : Status of Member = " +username+ " in MongoDB is 'pending'.");
 		Reporter.log("-- X --");
+		Reporter.log("");
 		
 		Thread.sleep(4000);
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("2) Updating status for member "+username+ " to 'deleted' using member.put API and 'status' field");
 		
 		jsonBody = "";
@@ -151,11 +149,9 @@ public class TC5013_MemberPut_Status {
 		Assert.assertEquals(bMemberStatus, true);
 		Reporter.log("Passed : Status of Member = " +username+ " in MongoDB is 'deleted'.");
 		Reporter.log("-- X --");
+		Reporter.log("");
 		
 		Thread.sleep(4000);
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("3) Updating status for member "+username+ " to 'banned' using member.put API and 'status' field");
 		
 		jsonBody = "";
@@ -183,11 +179,9 @@ public class TC5013_MemberPut_Status {
 		Assert.assertEquals(bMemberStatus, true);
 		Reporter.log("Passed : Status of Member = " +username+ " in MongoDB is 'banned'.");
 		Reporter.log("-- X --");
+		Reporter.log("");
 		
 		Thread.sleep(4000);
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("4) Updating status for member "+username+ " to 'active' using member.put API and 'status' field");
 		
 		jsonBody = "";
@@ -215,11 +209,9 @@ public class TC5013_MemberPut_Status {
 		Assert.assertEquals(bMemberStatus, true);
 		Reporter.log("Passed : Status of Member = " +username+ " in MongoDB is 'active'.");
 		Reporter.log("-- X --");
+		Reporter.log("");
 		
 		Thread.sleep(4000);
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("5) Updating status for member "+username+ " to 'invalid string value' using member.put API and 'status' field");
 		
 		jsonBody = "";

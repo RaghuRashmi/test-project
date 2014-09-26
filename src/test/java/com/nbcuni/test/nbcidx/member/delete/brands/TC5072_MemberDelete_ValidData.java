@@ -37,9 +37,6 @@ public class TC5072_MemberDelete_ValidData {
 	private DB mydb;
 	private Proxy proxy=null;
 	
-	JsonObject response=null;
-	int responseCode;
-	
 	/**
 	 * Instantiate the TestNG Before Class Method.
 	 */

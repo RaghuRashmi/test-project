@@ -112,11 +112,9 @@ public class TC5025_MemberPut_Suffix {
 		DBObject DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");		
-		
+		Reporter.log("-- X --");			
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating Suffix for member "+username+ " using member.put API and 'suffix' field");
 				
 		jsonBody = "";
@@ -137,10 +135,8 @@ public class TC5025_MemberPut_Suffix {
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
 		Reporter.log("-- X --");
+		Reporter.log("");
 
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
 		Reporter.log("3) Updating Suffix for member "+username+ " using member.put API and 'suffix' field");
 				
 		jsonBody = "";
@@ -160,6 +156,7 @@ public class TC5025_MemberPut_Suffix {
 		DbObj = al.getMongoDbResponse(mydb, searchQuery, fields, al.IDX_MEMBERS_COLLECTION, al.FIND);	
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
-		Reporter.log("-- X --");			
+		Reporter.log("-- X --");
+		Reporter.log("");
 	}
 }

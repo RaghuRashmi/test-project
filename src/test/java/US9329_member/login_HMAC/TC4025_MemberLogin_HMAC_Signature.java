@@ -150,7 +150,7 @@ public class TC4025_MemberLogin_HMAC_Signature {
 		Reporter.log("");
 		// Generate Post body to link with Gigya.
 		String postBody ="id="+uuid+"&provider="+provider+"&provider_id="+providerID;
-		int mylink = ma.memberLINKNoVerifyResponse(api, al, postBody, surfBrandId);	
+		int mylink = ma.memberLINKNoVerifyResponseCode(api, al, postBody, surfBrandId);	
 		if (mylink ==200)
 			Reporter.log("Linking is successful");
 		else

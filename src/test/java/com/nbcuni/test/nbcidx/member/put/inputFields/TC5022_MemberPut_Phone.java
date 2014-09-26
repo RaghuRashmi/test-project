@@ -3,6 +3,10 @@ package com.nbcuni.test.nbcidx.member.put.inputFields;
 import static org.testng.AssertJUnit.fail;
 
 import java.net.Proxy;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -117,22 +121,10 @@ public class TC5022_MemberPut_Phone {
 			fail("MongoDB Cursor is empty. No Data found from Database");
 		Reporter.log("Latest value for Phone Number of this member is = " +phone);
 		Reporter.log("-- X --");
-		/*
-		JsonObject DBResponse =  al.JsonObjectFromMongoDBObject(DbObj);
-		ArrayList<HashMap<String, String>> phoneArrlst = api.convertJsonArrayToHashMap(api.getAsJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"phone"));
-		Reporter.log("Latest value for Phone Number of this member is = " +phoneArrlst.get(0).toString());
-		
-		boolean bMemberPhone = phoneArrlst.get(0).toString().contains(phone);
-		Assert.assertEquals(bMemberPhone, true);
-						
-		Reporter.log("Passed : Phone field created for Member = " +username+ " in MongoDB with value Phone = "+phoneArrlst.get(0).toString());
-		*/
-		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+		
+			
 		Reporter.log("2) Updating Phone field for member "+username+ " with '10 digit string' using member.put API and 'phone' field");
-		
 		//Generate the JSON Body for POST 
 		phone="2024567890";
 		jsonBody ="{'_id':'"+sApiUUID+"','phone':[{'number': '"+phone+"'}]}";
@@ -152,22 +144,9 @@ public class TC5022_MemberPut_Phone {
 			fail("MongoDB Cursor is empty. No Data found from Database");
 		Reporter.log("Latest value for Phone Number of this member is = " +phone);
 		Reporter.log("-- X --");
-		
-		/*
-		DBResponse =  al.JsonObjectFromMongoDBObject(DbObj);
-		phoneArrlst = api.convertJsonArrayToHashMap(api.getAsJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"phone"));
-		Reporter.log("Latest value for Phone Number of this member is = " +phoneArrlst.get(0).toString());
-		
-		bMemberPhone = phoneArrlst.get(0).toString().contains(phone);
-		Assert.assertEquals(bMemberPhone, true);
-						
-		Reporter.log("Passed : Phone field updated for Member = " +username+ " in MongoDB with value Phone = "+phoneArrlst.get(0).toString());
-		*/
-		
-		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
+
 		Reporter.log("3) Updating Phone field for member "+username+ " with 'string more than 10 digit' using member.put API and 'phone' field");
 		
 		//Generate the JSON Body for POST 
@@ -188,12 +167,9 @@ public class TC5022_MemberPut_Phone {
 		if(DbObj==null)
 			fail("MongoDB Cursor is empty. No Data found from Database");
 		Reporter.log("Latest value for Phone Number of this member is = " +phone);
-		Reporter.log("-- X --");
-		
-						
+		Reporter.log("-- X --");						
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("4) Updating Phone field for member "+username+ " with '2 phone numbers' using member.put API and 'phone' field");
 		
 		//Generate the JSON Body for POST 
@@ -216,21 +192,7 @@ public class TC5022_MemberPut_Phone {
 			fail("MongoDB Cursor is empty. No Data found from Database");
 		Reporter.log("Latest value for Phone Number of this member is = " +phone);
 		Reporter.log("-- X --");
-		
-		/*
-		DBResponse =  al.JsonObjectFromMongoDBObject(DbObj);
-		phoneArrlst = api.convertJsonArrayToHashMap(api.getAsJsonArray(api.getAsJsonObject(DBResponse, "metadata"),"phone"));
-		Reporter.log("Latest value for Phone Number of this member is = " +phoneArrlst.get(0).toString());
-		
-		bMemberPhone = phoneArrlst.get(0).toString().contains(phone);
-		Assert.assertEquals(bMemberPhone, true);
-						
-		Reporter.log("Passed : Phone field updated for Member = " +username+ " in MongoDB with value Phone = "+phoneArrlst.get(0).toString());
-		*/
-				
-		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("5) Updating Phone field for member "+username+ " with 'integer value' using member.put API and 'phone' field");
 		Reporter.log("");
 		
@@ -245,12 +207,9 @@ public class TC5022_MemberPut_Phone {
 			Reporter.log("Passed : member.put is not accepting integer value for 'phone' field");
 		else
 			fail("Failed with Response Code = "+responseCode);
-		Reporter.log("-- X --");
-					
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("6) Updating Phone field for member "+username+ " with 'string without any digit' using member.put API and 'phone' field");
 		Reporter.log("");
 		
@@ -265,11 +224,9 @@ public class TC5022_MemberPut_Phone {
 			Reporter.log("Passed : member.put is not accepting 'string without any digit' for 'phone' field");
 		else
 			fail("Failed with Response Code = "+responseCode);
-		Reporter.log("-- X --");
-				
+		Reporter.log("-- X --");				
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("7) Updating Phone field for member "+username+ " with 'string mix of digits and -' using member.put API and 'phone' field");
 		Reporter.log("");
 		
@@ -285,5 +242,6 @@ public class TC5022_MemberPut_Phone {
 		else
 			fail("Failed with Response Code = "+responseCode);
 		Reporter.log("-- X --");		
+		Reporter.log("");
 	}
 }

@@ -121,13 +121,10 @@ public class TC5016_MemberPut_Gender {
 		boolean bMemberGender = genderArrlst.get(0).toString().contains(gender);
 		Assert.assertEquals(bMemberGender, true);
 		Reporter.log("Passed : Gender field created for Member = " +username+ " in MongoDB with value Gender = "+gender);
-		Reporter.log("-- X --");
-		
+		Reporter.log("-- X --");		
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("2) Updating Gender for member "+username+ " to value = 'd' using member.put API and 'email' field");
-		
 		gender = "d";
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','gender':'"+gender+"'}";
@@ -154,13 +151,10 @@ public class TC5016_MemberPut_Gender {
 		bMemberGender = genderArrlst.get(0).toString().contains(gender);
 		Assert.assertEquals(bMemberGender, true);
 		Reporter.log("Passed : Gender field created for Member = " +username+ " in MongoDB with value Gender = "+gender);
-		Reporter.log("-- X --");
-	
+		Reporter.log("-- X --");	
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+
 		Reporter.log("3) Updating Gender for member "+username+ " to value = 'm' using member.put API and 'email' field");
-		
 		gender = "m";
 		jsonBody = "";
 		jsonBody ="{'_id':'"+sApiUUID+"','gender':'"+gender+"'}";
@@ -186,11 +180,9 @@ public class TC5016_MemberPut_Gender {
 		bMemberGender = genderArrlst.get(0).toString().contains(gender);
 		Assert.assertEquals(bMemberGender, true);
 		Reporter.log("Passed : Gender field created for Member = " +username+ " in MongoDB with value Gender = "+gender);
-		Reporter.log("-- X --");
-				
+		Reporter.log("-- X --");				
 		Reporter.log("");
-		Reporter.log("************************************************************************************************************************************************************");
-		Reporter.log("");
+		
 		Reporter.log("4) Updating Gender for member "+username+ " to 'invalid Gender value' using member.put API and 'gender' field");
 		
 		jsonBody = "";
